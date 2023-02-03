@@ -1,0 +1,47 @@
+<%- include("header.ejs") %>
+
+<body >
+    <%= user %>
+    <div class="container">
+        <h1 class="text-bg-success mb-3">User Data</h1>
+        <div class="card mb-3" style="width: 18rem;">
+            <div class="card-header">
+              User Id
+            </div>
+            <div>user.id</div>
+          </div>
+          <div class="card mb-3" style="width: 18rem;">
+            <div class="card-header">
+              First Name
+            </div>
+            <div>user.fName</div>
+          </div>
+          <div class="card mb-3" style="width: 18rem;">
+            <div class="card-header">
+              Last Name
+            </div>
+            <div>user.lName</div>
+          </div>
+          <div class="card mb-3" style="width: 18rem;">
+            <div class="card-header">
+              Age
+            </div>
+            <div>user.age</div>
+          </div>
+          <div class="card mb-3" style="width: 18rem;">
+            <div class="card-header mb-3">
+              Occupation
+            </div>
+            <div>user.occupation</div>
+          </div>
+          <a href ="/updateData"><button type="button" class="btn btn-success">Update</button></a>
+
+          <a href ="/delete"><button type="button" class="btn btn-danger">Delete</button></a>
+
+          <a href ="/"><button type="button" class="btn btn-success">Exit</button></a>
+    </div>
+
+        
+</body>
+
+</html>
