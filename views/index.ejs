@@ -1,0 +1,32 @@
+<%- include("header.ejs") %>
+
+  <div class="container">
+    <form action="/getUserData" method="post">
+     <h1 class="text-bg-success p-3">User Data Collector</h1>
+     <h2>Add user Data</h2>
+    <div class="mb-3">
+        <label for="fName" class="form-label">First Name</label>
+        <input type="text" class="form-control" id="fName" placeholder="First Name" name="fName">
+      </div>
+      <div class="mb-3">
+        <label for="lName" class="form-label">Last Name</label>
+        <input type="text" class="form-control" id="lName" placeholder="Last Name" name="lName">
+      </div>
+
+      <div class="mb-3">
+        <label for="age" class="form-label">Age</label>
+        <input type="number" class="form-control" id="age" placeholder="Age" name="age">
+      </div>
+
+      <div class="mb-3">
+        <label for="occupation" class="form-label">Occupation</label>
+        <input type="text" class="form-control" id="occupation" placeholder="Occupation" name="occupation">
+      </div>
+      <button type="submit" class="mb-3 btn btn-success">Submit</button>
+     
+     </form> 
+     <a href="/findUser"><button  class="btn btn-success">Get User Information</button></a>
+    </div>
+ 
+</body>
+</html>
