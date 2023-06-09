@@ -8,13 +8,12 @@ app.use(express.static(__dirname+"/public"));
 app.use(parser.urlencoded({extended: true}));
 app.set("view engine", "ejs")
 
-
 app.get("/", (req,res)=>{
-    res.sendFile(__dirname+"/index.html")
+    res.render("index")
 })
 
-app.get("/findUser", (req,res)=>{
-    res.render("user", {user: "user"})
+app.get("/findPage", (req,res)=>{
+    res.render("findUser")
  })
 
 app.listen(80, ()=>{
