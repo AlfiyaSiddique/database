@@ -14,7 +14,7 @@ app.get("/", (req,res)=>{
 })
 
 // Get the page for find user by id 
-app.get("/findPage", (req,res)=>{
+app.get("/find", (req,res)=>{
     res.render("findUser")
  })
 
