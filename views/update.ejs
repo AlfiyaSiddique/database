@@ -1,32 +1,37 @@
 <%- include("header.ejs") %>
-
-<body>
-    <%= user %>
-    <form action="/updateUserData" method="post">
+  <form action="/update" method="post">
     <div class="container">
-  <h1 class="text-bg-success p-3">Update User</h1>
-    <div class="mb-3">
+      <h1 class="text-bg-success p-3">Update User</h1>
+      <div class="mb-3">
+        <label for="id" class="form-label">User Id</label>
+        <input type="number" class="form-control" id="id" placeholder="User Id" name="id" value="<%=user.id%>" readonly>
+      </div>
+      <div class="mb-3">
         <label for="fName" class="form-label">First Name</label>
-        <input type="text" class="form-control" id="fName" placeholder="First Name" name="fName" value="user.fName">
+        <input type="text" class="form-control" id="fName" placeholder="First Name" name="fName"
+          value="<%= user.fName %>">
       </div>
       <div class="mb-3">
         <label for="lName" class="form-label">Last Name</label>
-        <input type="text" class="form-control" id="lName" placeholder="Last Name" name="lName" value="user.lName">
+        <input type="text" class="form-control" id="lName" placeholder="Last Name" name="lName"
+          value="<%= user.lName %>">
       </div>
 
       <div class="mb-3">
         <label for="age" class="form-label">Age</label>
-        <input type="number" class="form-control" id="age" placeholder="Age" name="age" value="90">
+        <input type="number" class="form-control" id="age" placeholder="Age" name="age" value="<%= user.age %>">
       </div>
 
       <div class="mb-3">
         <label for="occupation" class="form-label">Occupation</label>
-        <input type="text" class="form-control" id="occupation" placeholder="Occupation" name="occupation" value="user.occupation">
+        <input type="text" class="form-control" id="occupation" placeholder="Occupation" name="occupation"
+          value="<%= user.occupation %>">
       </div>
       <button type="submit" class="btn btn-primary">Update</button>
 
     </div>
-</form>
-    
-</body>
-</html>
+  </form>
+
+  </body>
+
+  </html>

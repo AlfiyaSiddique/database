@@ -1,16 +1,24 @@
 <%- include("header.ejs") %>
 
-<body>
     <div class="container">
-        <form action="/getUserData">
+        <form id="userForm" action="/user" method="get">
             <h1 class="text-bg-success p-3">Find User By Id</h1>
             <div class="mb-3">
                 <label for="occupation" class="form-label">User Id</label>
-                <input type="number" class="form-control" id="userid" placeholder="Enter User Id" name="User Id">
+                <input type="number" class="form-control" id="userid" placeholder="Enter User Id" name="id">
               </div>
               <button type="submit" class="mb-3 btn btn-success">Find User</button>
         </form>
     </div>
+
+    <script>
+        document.getElementById('userForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+         const userId = document.getElementById('userid').value;
+            this.action = `/user/${userId}`;
+            this.submit();
+    });
+    </script>
 </body>
 
 </html>
