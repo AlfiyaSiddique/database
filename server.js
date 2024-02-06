@@ -8,14 +8,14 @@ app.use(express.static(__dirname+"/public"));
 app.use(parser.urlencoded({extended: true}));
 app.set("view engine", "ejs")
 
-  // Get index Page
-app.get("/", (req,res)=>{
-    res.render("index")
+// Get index Page
+app.get("/", (request, response)=>{
+    response.render("index")
 })
 
 // Get the page for find user by id 
-app.get("/find", (req,res)=>{
-    res.render("findUser")
+app.get("/find", (request, response)=>{
+    response.render("findUser")
  })
 
 //  Finds a user with id and renders all the user data
