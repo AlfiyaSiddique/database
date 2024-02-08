@@ -1,36 +1,46 @@
 <%- include("header.ejs") %>
-  <form action="/update" method="post">
     <div class="container">
       <h1 class="text-bg-success p-3">Update User</h1>
-      <div class="mb-3">
-        <label for="id" class="form-label">User Id</label>
-        <input type="number" class="form-control" id="id" placeholder="User Id" name="id" value="<%=user.id%>" readonly>
-      </div>
-      <div class="mb-3">
-        <label for="fName" class="form-label">First Name</label>
-        <input type="text" class="form-control" id="fName" placeholder="First Name" name="fName"
-          value="<%= user.fName %>" required>
-      </div>
-      <div class="mb-3">
-        <label for="lName" class="form-label">Last Name</label>
-        <input type="text" class="form-control" id="lName" placeholder="Last Name" name="lName"
-          value="<%= user.lName %>" required>
-      </div>
+        <div class="mb-3">
+          <label for="id" class="form-label">User Id</label>
+          <input type="number" class="form-control" id="id" placeholder="User Id" name="id" value="<%=user.id%>"
+            readonly>
+        </div>
+        <div class="mb-3">
+          <label for="fName" class="form-label">First Name</label>
+          <input type="text" class="form-control" id="fName" placeholder="First Name" name="fName"
+            value="<%= user.fName %>" required>
+        </div>
+        <div class="mb-3">
+          <label for="lName" class="form-label">Last Name</label>
+          <input type="text" class="form-control" id="lName" placeholder="Last Name" name="lName"
+            value="<%= user.lName %>" required>
+        </div>
 
-      <div class="mb-3">
-        <label for="age" class="form-label">Age</label>
-        <input type="number" class="form-control" id="age" placeholder="Age" name="age" value="<%= user.age %>" required>
-      </div>
+        <div class="mb-3">
+          <label for="age" class="form-label">Age</label>
+          <input type="number" class="form-control" id="age" placeholder="Age" name="age" value="<%= user.age %>"
+            required>
+        </div>
 
-      <div class="mb-3">
-        <label for="occupation" class="form-label">Occupation</label>
-        <input type="text" class="form-control" id="occupation" placeholder="Occupation" name="occupation"
-          value="<%= user.occupation %>" required>
-      </div>
-      <button type="submit" class="btn btn-primary">Update</button>
+        <div class="mb-3">
+          <label for="occupation" class="form-label">Occupation</label>
+          <input type="text" class="form-control" id="occupation" placeholder="Occupation" name="occupation"
+            value="<%= user.occupation %>" required>
+        </div>
+        <button type="button"  onclick="makeUpdateRequest()"   class="btn btn-primary">Update</button>
 
     </div>
-  </form>
+
+    <script>
+      function makeUpdateRequest(){
+        const fName = document.getElementById("fName").value
+        const lName = document.getElementById("lName").value
+        const age = document.getElementById("age").value
+        const occupation = document.getElementById("occupation").value
+        makeRequest('/update', 'PUT', '<%= user.id%>', fName,lName,age,occupation)
+      }
+    </script>
 
   </body>
 
