@@ -13,3 +13,30 @@
 </head>
 
 <body>
+ <script>
+    function makeRequest(path, meth, ...data) {
+      let requestBody = { id: data[0] }
+      if (meth === "PUT") {
+        requestBody.fName = data[1]
+        requestBody.lName = data[2]
+        requestBody.age = data[3]
+        requestBody.occupation = data[4]
+      }
+
+      fetch(path, {
+        method: meth,
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(requestBody)
+      }).then((data)=>data.json())
+      .then((result)=>{
+        window.location.href = result.redirect
+      }).then((err)=>{
+        window.location.href = err.redirect
+        alert("Internal server error")
+         console.log(e)
+      })
+    }
+
+  </script>
