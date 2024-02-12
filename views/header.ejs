@@ -14,9 +14,9 @@
 
 <body>
  <script>
-    function makeRequest(path, meth, ...data) {
+    function makeRequest(path, method, ...data) {
       let requestBody = { id: data[0] }
-      if (meth === "PUT") {
+      if (method === "PUT") {
         requestBody.fName = data[1]
         requestBody.lName = data[2]
         requestBody.age = data[3]
@@ -24,7 +24,7 @@
       }
 
       fetch(path, {
-        method: meth,
+        method: method,
         headers: {
           'Content-Type': 'application/json'
         },
