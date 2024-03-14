@@ -1,11 +1,10 @@
 const express = require("express");
 const ejs = require("ejs");
-const parser = require("body-parser");
 
 const app = express();
 
 app.use(express.static(__dirname+"/public"));
-app.use(parser.urlencoded({extended: true}));
+app.use(express.json())
 app.set("view engine", "ejs")
 
 // Get index Page
